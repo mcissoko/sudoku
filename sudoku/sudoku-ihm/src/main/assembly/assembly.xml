@@ -1,0 +1,56 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+
+	<id>bin</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<baseDirectory>${project.name}</baseDirectory>
+
+	<!-- Adds dependencies to zip package under lib directory -->
+	<dependencySets>
+		<dependencySet>
+			<!-- Project artifact is not copied under library directory since it is 
+				added to the root directory of the zip package. -->
+			<!-- <useProjectArtifact>true</useProjectArtifact> -->
+			<outputDirectory>lib</outputDirectory>
+			<excludes>
+				<exclude>com.mobilityway:signal-mgr</exclude>
+			</excludes>
+			<!-- <unpack>false</unpack> -->
+		</dependencySet>
+		<dependencySet>
+			<outputDirectory>bin</outputDirectory>
+			<includes>
+				<include>com.mobilityway:signal-mgr</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+
+	<fileSets>
+		<!-- Adds startup scripts to the root directory of zip package -->
+		<fileSet>
+			<directory>src/main/scripts/bin/windows</directory>
+			<outputDirectory>bin/windows</outputDirectory>
+			<includes>
+				<include>*.*</include>				
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/scripts/bin/unix</directory>
+			<outputDirectory>bin/unix</outputDirectory>
+			<includes>
+				<include>*</include>				
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/resources/config</directory>
+			<outputDirectory>config</outputDirectory>
+			<filtered>true</filtered>
+			<includes>
+				<include>*</include>
+				<include>**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

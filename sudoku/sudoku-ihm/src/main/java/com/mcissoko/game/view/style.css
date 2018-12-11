@@ -1,0 +1,23 @@
+
+
+.focus-in-style {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+
+.focus-out-style {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+
+
+.resolved-style {
+    -fx-font-size: 7px;
+    -fx-font-family: System;
+    -fx-text-fill: #349105;
+    -fx-opacity: 1;
+}
