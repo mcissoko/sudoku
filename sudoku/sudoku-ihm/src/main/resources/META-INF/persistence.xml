@@ -1,0 +1,44 @@
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="pu-signalmgt" transaction-type="RESOURCE_LOCAL">
+
+		<!-- Persistence provider -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<properties>
+
+			<property name="hibernate.archive.autodetection" value="class, hbm" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			
+			<!-- The JDBC URL to the database instance -->			
+ 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bdsignal" /> 
+<!--			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.21.68.178:5432/atway" /> -->
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="postgres" />
+			
+			<property name="hibernate.default_schema" value="signalmgt" />
+
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.DefaultComponentSafeNamingStrategy" />
+			<property name="hibernate.query.startup_check" value="false" />
+			
+			<!-- Valide le schema en BD par rapport au mapping -->
+			<property name="hibernate.hbm2ddl.auto" value="validate"/>
+			
+			<!-- Pool de connexion -->
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="50" />
+			<property name="hibernate.c3p0.timeout" value="300" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="3000" />
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>

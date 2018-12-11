@@ -1,0 +1,29 @@
+
+
+
+.root {
+     -fx-background-image: url("../images/bg.jpg");
+}
+
+
+.menu-style {
+     -fx-background-image: url("../images/menu.jpg");
+     -fx-font: bold 16px "Arial";
+}
+
+
+.undo-button-style { 
+    -fx-background-image: url("../images/undo.png");
+    -fx-background-size: 70%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 80%;
+   
+}
+
+
+.redo-button-style { 
+    -fx-background-image: url("../images/redo.png");
+    -fx-background-size: 70%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 80%;
+}
