@@ -669,27 +669,27 @@
             </GridPane>
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0" styleClass="menu-style" stylesheets="@../../../../../resources/styles/styles.css">
               <menus>
-                <Menu mnemonicParsing="false" text="Partie">
+                <Menu mnemonicParsing="false" text="Game">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#newGame" text="Nouvelle" />
-                        <MenuItem fx:id="resolveMenuItem" disable="true" mnemonicParsing="false" onAction="#resolveCurrent" text="Resoudre" />
-                        <MenuItem fx:id="resolveMenuItem2" disable="true" mnemonicParsing="false" onAction="#resolveCurrentPasAPas" text="Resoudre Pas à Pas" />
+                    <MenuItem mnemonicParsing="false" onAction="#newGame" text="New Game" />
+                        <MenuItem fx:id="resolveMenuItem" disable="true" mnemonicParsing="false" onAction="#resolveCurrent" text="Resolve" />
+                        <MenuItem fx:id="resolveMenuItem2" disable="true" mnemonicParsing="false" onAction="#resolveCurrentPasAPas" text="Step by Step resolve" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edition">
+                <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                        <MenuItem fx:id="eraseMenuItem" disable="true" mnemonicParsing="false" onAction="#erase" text="Effacer" />
+                        <MenuItem fx:id="eraseMenuItem" disable="true" mnemonicParsing="false" onAction="#erase" text="Clear" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Aide">
+                <Menu mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Impression">
+                  <Menu mnemonicParsing="false" text="Print">
                      <items>
-                        <MenuItem fx:id="printMenuItem" disable="true" mnemonicParsing="false" onAction="#printGrid" text="Imprimer la grille" />
-                        <MenuItem fx:id="printSolutionMenuItem" disable="true" mnemonicParsing="false" onAction="#printSolution" text="Imprimer la solution" />
+                        <MenuItem fx:id="printMenuItem" disable="true" mnemonicParsing="false" onAction="#printGrid" text="Print current grid" />
+                        <MenuItem fx:id="printSolutionMenuItem" disable="true" mnemonicParsing="false" onAction="#printSolution" text="print solution" />
                      </items>
                   </Menu>
               </menus>
@@ -709,17 +709,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#choiceEasy" prefHeight="25.0" prefWidth="244.0" text="Facile" textFill="#1dbc17">
+                  <Button mnemonicParsing="false" onAction="#choiceEasy" prefHeight="25.0" prefWidth="244.0" text="Easy" textFill="#1dbc17">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#choiceMedium" prefHeight="25.0" prefWidth="244.0" text="Moyen" textFill="#dab10b" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#choiceMedium" prefHeight="25.0" prefWidth="244.0" text="Medium" textFill="#dab10b" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#choiceHard" prefHeight="25.0" prefWidth="244.0" text="Difficile" textFill="#d01f1f" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#choiceHard" prefHeight="25.0" prefWidth="244.0" text="Hard" textFill="#d01f1f" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -731,7 +731,7 @@
                   </Button>
                </children>
             </GridPane>
-            <Button layoutX="112.0" layoutY="360.0" mnemonicParsing="false" onAction="#choiceDefault" prefHeight="39.0" prefWidth="215.0" text="Saisie libre" textAlignment="CENTER" textFill="#3a0be3">
+            <Button layoutX="112.0" layoutY="360.0" mnemonicParsing="false" onAction="#choiceDefault" prefHeight="39.0" prefWidth="215.0" text="Free entry" textAlignment="CENTER" textFill="#3a0be3">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -757,7 +757,7 @@
             </Label>
             <Button fx:id="redoBtn" layoutX="534.0" layoutY="38.0" mnemonicParsing="false" onAction="#redo" prefHeight="43.0" prefWidth="52.0" styleClass="redo-button-style" stylesheets="@../../../../../resources/styles/styles.css" visible="false" />
             <Button fx:id="undoBtn" disable="true" layoutX="14.0" layoutY="38.0" mnemonicParsing="false" onAction="#undo" prefHeight="43.0" prefWidth="52.0" styleClass="undo-button-style" stylesheets="@../../../../../resources/styles/styles.css" visible="false" />
-            <Label fx:id="bravoLabel" layoutX="261.0" layoutY="-2.0" prefHeight="55.0" prefWidth="140.0" text="Bravo ! " textFill="#2ba82b" visible="false">
+            <Label fx:id="bravoLabel" layoutX="261.0" layoutY="-2.0" prefHeight="55.0" prefWidth="400.0" text="Bravo ! " textFill="#2ba82b" visible="false">
                <font>
                   <Font name="Arial Bold" size="36.0" />
                </font>

@@ -385,7 +385,7 @@ public class RootLayoutController implements IMonitor {
 		eraseMenuItem.setDisable(true);
 		redoBtn.setDisable(true); redoBtn.setVisible(false); redoSequences.clear();
 		undoBtn.setDisable(true); undoBtn.setVisible(false); undoSequences.clear();
-		String str = "Résolu en " + convertDuration(this.promise.getDuration());
+		String str = "Solved in " + convertDuration(this.promise.getDuration());
 		Platform.runLater(
 				  () -> {
 					  this.durationLabel.setText(str);
@@ -412,10 +412,12 @@ public class RootLayoutController implements IMonitor {
 		
 		long elapsedSeconds = duration / secondsInMilli;
 		
+		long elapsedMillis = duration % secondsInMilli;
+		
 		return String.format(
-		    "%d days, %d hours, %d minutes, %d seconds%n", 
+		    "%d days, %d hours, %d minutes, %d seconds%n, %d millis%n", 
 		    elapsedDays,
-		    elapsedHours, elapsedMinutes, elapsedSeconds);
+		    elapsedHours, elapsedMinutes, elapsedSeconds, elapsedMillis);
 	}
 
 	private void animateBravo() {
@@ -574,6 +576,9 @@ public class RootLayoutController implements IMonitor {
 					Box box = group.getBox(positionIndexEnum);
 					if (box.getState() == StateBoxEnum.FIXED) {
 						BoxUi boxUi = gridMap.get(indexBox(groupIndexEnum, positionIndexEnum));
+						if(boxUi == null) {
+							continue;
+						}
 
 						this.grille.getGroup(groupIndexEnum).fixBox(positionIndexEnum, group.getBox(positionIndexEnum).getContent());
 
