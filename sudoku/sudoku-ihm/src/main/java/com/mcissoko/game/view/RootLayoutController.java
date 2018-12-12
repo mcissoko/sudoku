@@ -415,7 +415,7 @@ public class RootLayoutController implements IMonitor {
 		long elapsedMillis = duration % secondsInMilli;
 		
 		return String.format(
-		    "%d days, %d hours, %d minutes, %d seconds%n, %d millis%n", 
+		    "%d days, %d hours, %d minutes, %d seconds, %d milliseconds", 
 		    elapsedDays,
 		    elapsedHours, elapsedMinutes, elapsedSeconds, elapsedMillis);
 	}
